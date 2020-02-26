@@ -8,19 +8,21 @@ public class PlaneMovement : MonoBehaviour
 
     
 
-    private float m_movementInput;
+    public float m_movementInput;
     private float m_pitchInput;
     private float m_rollInput;
     private float m_yawInput;
 
     
-    public float m_movementSpeed = 0f;
+    public float m_movementSpeed = 50f;
     public float m_rollSpeed = 140f;
     public float m_pitchSpeed = 90f;
     public float m_yawSpeed = 50f;
     public float m_stallspeed = 15f;
     public float m_topSpeed = 50f;
     private Rigidbody m_rigidBody;
+
+    public float acceleration = 5;
 
     private void Start()
     {
@@ -33,28 +35,15 @@ public class PlaneMovement : MonoBehaviour
         m_rollInput = Input.GetAxis("Roll");
         m_yawInput = Input.GetAxis("Yaw");
 
-        if (m_movementInput > 1)
+        if (m_movementInput > 0)
         {
-            for (float i = m_movementSpeed; i == m_topSpeed; i++)
-            {
-                m_movementSpeed++;
-            }
+            m_movementSpeed += Time.deltaTime * acceleration;
         }
         if (m_movementInput == 0)
         {
-            for (float k = m_movementSpeed; k == 0f; k--)
-            {
-                m_movementSpeed--;
-            }
+            m_movementSpeed -= Time.deltaTime * acceleration;
         }
-        if (m_movementSpeed >= m_stallspeed)
-        {
-            m_rigidBody.useGravity = true;
-        }
-        else
-        {
-            m_rigidBody.useGravity = false;
-        }
+        m_movementSpeed = Mathf.Clamp(m_movementSpeed, 0, m_topSpeed);
     }
 
     private void OnEnable()
@@ -69,7 +58,7 @@ public class PlaneMovement : MonoBehaviour
         Pitch();
         Roll();
         Yaw();
-        
+        Stall();
         
         
     }
@@ -101,7 +90,18 @@ public class PlaneMovement : MonoBehaviour
         Quaternion YawSpeed = Quaternion.Euler(0f, Yaw, 0f);
         m_rigidBody.MoveRotation(m_rigidBody.rotation * YawSpeed);
     }
-    
+    void Stall()
+    {
+        
+        if (m_movementSpeed <= m_stallspeed)
+        {
+            m_rigidBody.useGravity = true;
+        }
+        else
+        {
+            m_rigidBody.useGravity = false;
+        }
+    }
 
     
 }
