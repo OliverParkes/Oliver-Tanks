@@ -14,11 +14,12 @@ public class PlaneMovement : MonoBehaviour
     private float m_yawInput;
 
     
-    public float m_movementSpeed = 30f;
+    public float m_movementSpeed = 0f;
     public float m_rollSpeed = 140f;
     public float m_pitchSpeed = 90f;
     public float m_yawSpeed = 50f;
-    public float m_stallspeed = 0.01f;
+    public float m_stallspeed = 15f;
+    public float m_topSpeed = 50f;
     private Rigidbody m_rigidBody;
 
     private void Start()
@@ -32,7 +33,28 @@ public class PlaneMovement : MonoBehaviour
         m_rollInput = Input.GetAxis("Roll");
         m_yawInput = Input.GetAxis("Yaw");
 
-        
+        if (m_movementInput > 1)
+        {
+            for (float i = m_movementSpeed; i == m_topSpeed; i++)
+            {
+                m_movementSpeed++;
+            }
+        }
+        if (m_movementInput == 0)
+        {
+            for (float k = m_movementSpeed; k == 0f; k--)
+            {
+                m_movementSpeed--;
+            }
+        }
+        if (m_movementSpeed >= m_stallspeed)
+        {
+            m_rigidBody.useGravity = true;
+        }
+        else
+        {
+            m_rigidBody.useGravity = false;
+        }
     }
 
     private void OnEnable()
@@ -54,7 +76,7 @@ public class PlaneMovement : MonoBehaviour
 
     void Move()
     {
-        Vector3 Movement = transform.forward * m_movementInput * m_movementSpeed * Time.deltaTime;
+        Vector3 Movement = transform.forward * 1 * m_movementSpeed * Time.deltaTime;
         m_rigidBody.MovePosition(m_rigidBody.position + Movement);
         m_rigidBody.AddForce(Vector3.forward * m_movementSpeed * Time.deltaTime);
     }
