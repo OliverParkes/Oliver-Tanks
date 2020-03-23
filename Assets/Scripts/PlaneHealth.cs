@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TankHealth : MonoBehaviour
+public class PlaneHealth : MonoBehaviour
 {
     // Start is called before the first frame update
     public float m_tankHealth = 100;
@@ -11,9 +11,6 @@ public class TankHealth : MonoBehaviour
 
     private float m_currentHealth;
     private bool m_Dead;
-    private bool m_canfly;
-
-    public GameObject m_plane;
 
     private ParticleSystem m_ExplosionParticles;
 
@@ -22,15 +19,6 @@ public class TankHealth : MonoBehaviour
         m_ExplosionParticles = Instantiate(m_explosionPrefab).GetComponent<ParticleSystem>();
 
         m_ExplosionParticles.gameObject.SetActive(false);
-    }
-    private void Update()
-    {
-        m_canfly = UpgradeBox.m_canFly;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        m_currentHealth = 0f;
     }
 
     private void OnEnable()
@@ -57,34 +45,20 @@ public class TankHealth : MonoBehaviour
             OnDeath();
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        m_currentHealth = 0f;
+    }
     private void OnDeath()
     {
         m_Dead = true;
 
-        if (m_canfly == false)
-        {
-            m_ExplosionParticles.transform.position = transform.position;
-            m_ExplosionParticles.gameObject.SetActive(true);
+        m_ExplosionParticles.transform.position = transform.position;
+        m_ExplosionParticles.gameObject.SetActive(true);
 
-            m_ExplosionParticles.Play();
+        m_ExplosionParticles.Play();
 
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            if (m_Dead == true)
-            {
-                m_plane.SetActive(true);
-
-                m_ExplosionParticles.transform.position = transform.position;
-                m_ExplosionParticles.gameObject.SetActive(true);
-
-                m_ExplosionParticles.Play();
-
-                gameObject.SetActive(false);
-            }
-        }
-        
+        gameObject.SetActive(false);
 
     }
 }
