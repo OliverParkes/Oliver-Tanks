@@ -8,7 +8,7 @@ public class PlaneShooting : MonoBehaviour
 
     public Transform m_fireTransform;
 
-    public float m_LaunchForce = 100f;
+    public float m_LaunchForce = 10;
 
 
     
@@ -20,7 +20,7 @@ public class PlaneShooting : MonoBehaviour
     
     void FixedUpdate()
     {
-        while (Input.GetButtonUp("Fire1"))
+        if (Input.GetButtonUp("Fire1"))
         {
             Fire();
         }
