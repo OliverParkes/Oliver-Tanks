@@ -30,10 +30,6 @@ public class TankHealth : MonoBehaviour
         m_canfly = UpgradeBox.m_canFly;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        m_currentHealth = 0f;
-    }
 
     private void OnEnable()
     {

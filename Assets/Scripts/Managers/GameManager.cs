@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] m_tanks;
 
+    private bool m_canfly = false;
+
     private float m_GameTime = 0;
     public float GameTime { get { return m_GameTime; } }
 
@@ -69,6 +71,7 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
+        m_canfly = UpgradeBox.m_canFly;
         switch (m_GameState)
         {
             case GameState.Start:
@@ -96,7 +99,7 @@ public class GameManager : MonoBehaviour
                 {
                     isGameOver = true;
                 }
-                else if (IsPlayerDead() == true)
+                else if (IsPlayerDead() == true && m_canfly == false)
                 {
                     isGameOver = true;
                 }
