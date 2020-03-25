@@ -22,6 +22,8 @@ public class TankHealth : MonoBehaviour
         m_ExplosionParticles = Instantiate(m_explosionPrefab).GetComponent<ParticleSystem>();
 
         m_ExplosionParticles.gameObject.SetActive(false);
+
+        m_plane.SetActive(false);
     }
     private void Update()
     {
