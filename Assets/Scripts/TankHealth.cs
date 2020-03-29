@@ -12,8 +12,10 @@ public class TankHealth : MonoBehaviour
     private float m_currentHealth;
     private bool m_Dead;
     private bool m_canfly;
+    public static bool m_flying;
 
     public GameObject m_plane;
+    public GameObject[] m_AAA;
 
     private ParticleSystem m_ExplosionParticles;
 
@@ -24,6 +26,11 @@ public class TankHealth : MonoBehaviour
         m_ExplosionParticles.gameObject.SetActive(false);
 
         m_plane.SetActive(false);
+
+        for (int i = 0; i < m_AAA.Length; i++)
+        {
+            m_AAA[i].SetActive(false);
+        }
     }
     private void Update()
     {
@@ -73,6 +80,12 @@ public class TankHealth : MonoBehaviour
             if (m_Dead == true)
             {
                 m_plane.SetActive(true);
+
+                for(int i = 0; i < m_AAA.Length; i++)
+                {
+                    m_AAA[i].SetActive(true);
+                }
+                m_flying = true;
 
                 m_ExplosionParticles.transform.position = transform.position;
                 m_ExplosionParticles.gameObject.SetActive(true);

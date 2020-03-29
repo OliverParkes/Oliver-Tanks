@@ -48,6 +48,7 @@ public class PlaneHealth : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         m_tankHealth1 = 0f;
+        TakeDamage(200);
     }
     private void OnDeath()
     {
