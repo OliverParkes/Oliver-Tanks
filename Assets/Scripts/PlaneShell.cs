@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlaneShell : MonoBehaviour
 {
     public float m_maxLifeTime = 2f;
-    public float m_maxDamage = 15f;
+    public float m_maxDamage = 300f;
     public float ExplosionRadius = 5f;
     public float ExplosionForce = 100f;
 
