@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Text m_timerText;
 
     public GameObject[] m_tanks;
+    public GameObject m_plane;
 
     private bool m_canfly = false;
 

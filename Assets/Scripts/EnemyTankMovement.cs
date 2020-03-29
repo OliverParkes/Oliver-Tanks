@@ -63,7 +63,7 @@ public class EnemyTankMovement : MonoBehaviour
 
             if (currentWayPoint < _WayPoints.Count)
             {
-                if (Vector3.Distance(transform.position, _WayPoints[currentWayPoint].position) > 2)
+                if (Vector3.Distance(transform.position, _WayPoints[currentWayPoint].position) > 5)
                 {
                     m_NavAgent.SetDestination(_WayPoints[currentWayPoint].position);
                 }

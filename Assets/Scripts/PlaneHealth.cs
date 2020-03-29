@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class PlaneHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float m_tankHealth = 100;
+    
+    public float m_tankHealth1 = 100;
     public GameObject m_explosionPrefab;
 
-    private float m_currentHealth;
+    private float m_currentHealth1;
     private bool m_Dead;
 
     private ParticleSystem m_ExplosionParticles;
@@ -23,7 +23,7 @@ public class PlaneHealth : MonoBehaviour
 
     private void OnEnable()
     {
-        m_currentHealth = m_tankHealth;
+        m_currentHealth1 = m_tankHealth1;
         m_Dead = false;
 
         SetHealthUI();
@@ -36,18 +36,18 @@ public class PlaneHealth : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        m_currentHealth -= amount;
+        m_currentHealth1 -= amount;
 
         SetHealthUI();
 
-        if (m_currentHealth <= 0)
+        if (m_currentHealth1 <= 0)
         {
             OnDeath();
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
-        m_currentHealth = 0f;
+        m_tankHealth1 = 0f;
     }
     private void OnDeath()
     {

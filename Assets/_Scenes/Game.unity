@@ -320,6 +320,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6563518048833079018}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &135562421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135562420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac9219434848a74b9960529f4833343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_tankHealth: 100
+  m_explosionPrefab: {fileID: 623014944}
+  m_plane: {fileID: 2026711530}
 --- !u!114 &135562427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,21 +351,6 @@ MonoBehaviour:
   m_FireTransform: {fileID: 1390825392}
   m_launchForce: 30
   m_ShootDelay: 1
---- !u!114 &135562428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135562420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ac9219434848a74b9960529f4833343, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_tankHealth: 100
-  m_explosionPrefab: {fileID: 623014944}
-  m_plane: {fileID: 0}
 --- !u!1001 &154567890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -754,6 +754,7 @@ MonoBehaviour:
   - {fileID: 252391134}
   - {fileID: 1509293202}
   - {fileID: 1402970927}
+  m_plane: {fileID: 0}
 --- !u!4 &193278215
 Transform:
   m_ObjectHideFlags: 0
@@ -895,7 +896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_tankHealth: 100
   m_explosionPrefab: {fileID: 2018609000}
-  m_plane: {fileID: 0}
+  m_plane: {fileID: 2026711530}
 --- !u!114 &252391136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1039,6 +1040,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1403982450285207212, guid: 767a6f0a0164b02478d715d8fe5f0c45, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 767a6f0a0164b02478d715d8fe5f0c45, type: 3}
+--- !u!1 &358917079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 122668, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90,
+    type: 3}
+  m_PrefabInstance: {fileID: 485527359}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &358917082 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 462980, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90,
+    type: 3}
+  m_PrefabInstance: {fileID: 485527359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &389816953 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: a7f69a12022261749975373fd8d5c690,
@@ -1445,6 +1458,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbed28eea47862544be68c1f55db213a, type: 3}
+--- !u!1001 &485527359
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2026711535}
+    m_Modifications:
+    - target: {fileID: 122668, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90, type: 3}
+      propertyPath: m_Name
+      value: Tank Explosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 462980, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462980, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462980, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462980, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 462980, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462980, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462980, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 462980, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 462980, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462980, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462980, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f53e2b760f0b2a4c8b27bb6f25b3c90, type: 3}
 --- !u!1 &499400926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,7 +2989,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 089519b51ef6a1a4096ba765560ce1c6, type: 3}
 --- !u!1 &1092820318 stripped
@@ -3771,7 +3841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_tankHealth: 100
   m_explosionPrefab: {fileID: 535343234}
-  m_plane: {fileID: 0}
+  m_plane: {fileID: 2026711530}
 --- !u!114 &1402970929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3794,6 +3864,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 681480441}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1421173081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1421173083}
+  - component: {fileID: 1421173082}
+  m_Layer: 0
+  m_Name: ButtonControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1421173082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421173081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd348aa904473349a17ff771245cce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1421173083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421173081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 371.32272, y: 329.17975, z: 12.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1437947608
 GameObject:
   m_ObjectHideFlags: 0
@@ -4214,7 +4327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_tankHealth: 100
   m_explosionPrefab: {fileID: 40548426}
-  m_plane: {fileID: 0}
+  m_plane: {fileID: 2026711530}
 --- !u!114 &1509293204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6074,7 +6187,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026711530}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 6000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -6090,7 +6203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026711530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 22.2, z: -189.61469}
+  m_LocalPosition: {x: 0, y: 45.8, z: -189.61469}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2144657389}
@@ -6098,6 +6211,7 @@ Transform:
   - {fileID: 1458738982}
   - {fileID: 1398539249}
   - {fileID: 1219941053}
+  - {fileID: 358917082}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6128,8 +6242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1aa2488867ea914db3fe48bd190ecbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_tankHealth: 100
-  m_explosionPrefab: {fileID: 0}
+  m_tankHealth1: 100
+  m_explosionPrefab: {fileID: 358917079}
 --- !u!4 &2069761647 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6563518048968154740, guid: 767a6f0a0164b02478d715d8fe5f0c45,
@@ -6591,6 +6705,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240113233057264883, guid: 7a3f596bfd0f83c49b981ac2b6cd172a,
+        type: 3}
+      propertyPath: m_Speed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4240113234151857361, guid: 7a3f596bfd0f83c49b981ac2b6cd172a,
         type: 3}
