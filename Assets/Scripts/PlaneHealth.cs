@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlaneHealth : MonoBehaviour
 {
@@ -60,6 +61,8 @@ public class PlaneHealth : MonoBehaviour
         m_ExplosionParticles.Play();
 
         gameObject.SetActive(false);
+
+        SceneManager.LoadScene(0);
 
     }
 }

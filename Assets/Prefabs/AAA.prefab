@@ -250,7 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_shell: {fileID: 3514495431439594633, guid: 3c6a86e3094076b42b0c8c5e1965a80d, type: 3}
   m_FireTransform: {fileID: 25604808668943660}
-  m_launchForce: 200
+  m_launchForce: 100
   m_ShootDelay: 0.5
 --- !u!1 &7640160152897772487
 GameObject:
@@ -276,7 +276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7640160152897772487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.688, z: 0}
+  m_LocalPosition: {x: -0.04, y: 0.92, z: 3.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 794792048113259168}

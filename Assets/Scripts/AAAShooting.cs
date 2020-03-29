@@ -37,7 +37,4 @@ public class AAAShooting : MonoBehaviour
         Rigidbody shellInstance = Instantiate(m_shell, m_FireTransform.position, m_FireTransform.rotation);
         shellInstance.velocity = m_launchForce * m_FireTransform.forward;
     }
-
-    
-    }
 }

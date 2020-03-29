@@ -10,7 +10,7 @@ public class AAA : MonoBehaviour
     public Transform m_turret;
     private void Awake()
     {
-        m_player = GameObject.FindGameObjectWithTag("Player");
+        m_player = GameObject.FindGameObjectWithTag("PlanePlayer");
     }
 
     void Start()
