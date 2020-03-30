@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour
                     if (IsPlayerDead() == true)
                     {
                         m_messageText.text = "Try Again";
+                        SceneManager.LoadScene(0);
                     }
                     else
                     {

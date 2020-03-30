@@ -15,7 +15,7 @@ public class AAAShooting : MonoBehaviour
 
     private void Awake()
     {
-        m_canShoot = false;
+        
         m_shootTimer = 0;
     }
 
